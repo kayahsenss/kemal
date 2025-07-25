@@ -1,0 +1,37 @@
+/* Temel stil ayarları */
+/* styles.css dosyasında body kısmını şununla değiştir: */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* Sabit bir arka plan görseli */
+    background: image('sud.jpg') no-repeat center center/cover;
+    color: #fff;
+    overflow: hidden;
+}
+.container {
+    text-align: center;
+    position: relative;
+    z-index: 1; /* İçeriğin arka planın üstünde olmasını sağlar */
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.45); /* Okunabilirliği artırmak için hafif koyu yarı saydam arkaplan */
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.question {
+    font-size: 85px; /* Yazıyı büyük yapıyoruz */
+    margin-bottom: 60px; /* Butonlarla arasını açıyoruz */
+    color: #ffffff; /* Beyaz renk, arka plan görseli üzerinde daha iyi durur */
+    font-weight: bold;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8); /* Okunurluğu artırmak için güçlü gölge */
+    transition: color 0.6s ease-out; /* Renk değişiminde yumuşak geçiş */
+    text-align: center; /* **Yazıyı ortala** */
+}
+
+.buttons {
+   
