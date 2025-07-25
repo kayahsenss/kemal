@@ -34,4 +34,76 @@ body {
 }
 
 .buttons {
-   
+    display: flex;
+    justify-content: center;
+    gap: 50px; /* Butonlar arası boşluk */
+    position: relative;
+    z-index: 2; /* Butonların sorunun üstünde olmasını sağlamak için */
+}
+
+button {
+    padding: 22px 55px;
+    font-size: 32px;
+    border: none;
+    cursor: pointer;
+    border-radius: 12px;
+    transition: all 0.4s ease-in-out;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+    white-space: nowrap; /* Metnin tek satırda kalmasını sağlar */
+    font-weight: bold;
+}
+
+button:hover:not(:disabled) {
+    transform: translateY(-7px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+}
+
+.yes-btn {
+    background-color: #28a745; /* Yeşil */
+    color: white;
+}
+
+.yes-btn:disabled {
+    background-color: #6c757d; /* Gri */
+    cursor: not-allowed;
+    opacity: 0.7;
+    transform: none; /* Disabled olduğunda hover efekti olmasın */
+    box-shadow: none;
+}
+
+.no-btn {
+    background-color: #dc3545; /* Kırmızı */
+    color: white;
+    transform-origin: center center; /* Ortadan büyüsün */
+}
+
+/* no-btn'in tüm ekranı kaplayan (fullscreen) hali */
+.no-btn.fullscreen {
+    position: fixed; /* Ekranı kaplaması için fixed kullanıyoruz */
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #dc3545; /* Kırmızı */
+    color: white;
+    font-size: 160px; /* Bu değer artık doğrudan butonda görünmeyecek, alttaki p etiketi için */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border: none;
+    z-index: 999; /* En önde olması için */
+    transform: scale(1) !important; /* Scale'i sıfırlıyoruz çünkü zaten tüm ekranı kaplayacak */
+    border-radius: 0; /* Köşeleri sıfırlıyoruz */
+    transition: all 0.7s ease-in-out; /* Geçişi yumuşatıyoruz */
+    cursor: default; /* Tıklanabilir olmasın */
+    box-shadow: none;
+}
+
+/* Tam ekrandaki "Hayır!" yazısı için yeni bir stil */
+.no-btn.fullscreen .fullscreen-text {
+    font-size: 160px; /* Büyük yazı boyutu */
+    font-weight: bold;
+    color: white;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8);
+}
